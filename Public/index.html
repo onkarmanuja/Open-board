@@ -1,0 +1,89 @@
+<html>
+<title>Open Board</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<body>
+
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+    <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large"> &times;</button>
+    <img class="pencil icon" src="Icons/Pencil.svg">
+    <img class="shapes icon rect" src="icons/shapes.png" onclick="openSmallMenu2()">
+    <img class="eraser icon" src="Icons/Eraser.svg">
+    <img class="download icon" src="Icons/Download.svg">
+    <img class="upload icon" src="Icons/Upload.svg">
+    <img class="sticky icon" src="Icons/StickyNote.svg">
+    <img class="undo icon" src="Icons/Undo.svg">
+    <img class="redo icon" src="Icons/Redo.svg">
+    <img class="clear icon" src="icons/archeology.png">
+    <img class="clear color" src="icons/color-palette.png" onclick="openSmallMenu()">
+    <img class="clear size" src="icons/width.png" onclick="openSmallMenu1()">
+
+  </div>
+  <div id="smallmenu" style="display: none">
+    <div class="outer">
+      <div class="red"></div>
+      <div class="green"></div>
+      <div class="blue"></div>
+    </div>
+  </div>
+  <div id="smallmenu1" style="display: none">
+    <div class="outer size-box">
+      <div class="size1"></div>
+      <div class="size2"></div>
+      <div class="size3"></div>
+      <div class="size4"></div>
+    </div>
+  </div>
+  <div id="smallmenu2" style="display: none">
+    <div class="outer">
+      <div class="shape"><i class="fas fa-minus  line"></i></div>
+      <div class="shape"><i class="far fa-square rect"></i></div>
+      <div class="shape"><i class="fas fa-play"></i></div>
+    </div>
+  </div>
+
+
+
+
+  <div class="w3-teal ">
+    <button class="w3-button w3-teal w3-xlarge w3-left " onclick="openLeftMenu()">&#9776;</button>
+
+  </div>
+  <!-- <span class="dark">Theme</span>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label> -->
+  <div class="container  night-mode-available">
+    <div class="night-mode-button">
+      <input type="checkbox" class="checkbox" id="night-mode">
+      <label for="night-mode" class="label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="blob"></div>
+      </label>
+    </div>
+    <!-- <div class="info night-mode-available">
+
+    </div> -->
+  </div>
+
+
+
+
+
+
+  <canvas></canvas>
+  
+  <script src="https://cdn.socket.io/4.2.0/socket.io.min.js" integrity="sha384-PiBR5S00EtOj2Lto9Uu81cmoyZqR57XcOna1oAuVuIEjzj0wpqDVfD0JA9eXlRsj" crossorigin="anonymous"></script>
+  <script>
+      let socket = io.connect("http://localhost:5000");
+  </script>
+  <script src="index.js"></script>
+
+</body>
+
+</html>
